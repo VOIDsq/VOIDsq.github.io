@@ -1,0 +1,179 @@
+<DOCTYPE html>
+    <html lang="en">
+        <head>
+    
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Settings Page</title>
+        
+        <link rel="stylesheet" href = "index.css">
+        <link rel="stylesheet" href="all.min.css"/>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script> 
+        
+    </head>
+    <body>
+            
+        <div class="container">
+            <div class="leftbox">
+                <nav>
+                    <img class="logo_img_login" src="Profile2.jpg">
+                    <a onclick="tabs(0)" class="tab active">
+                        <i class="fa-solid fa-user"></i> Personal Info
+                    </a>
+                    <a onclick="tabs(1)"
+                    class="tab">
+                    <i class="fa-solid fa-school"></i> Graduated School
+                </a>
+                   <a onclick="tabs(2)"
+                   class="tab">
+                   <i class="fa-solid fa-cloud"></i> Hobbies
+                </a>
+                  <a onclick="tabs(3)"
+                  class="tab">
+                  <i class="fa-solid fa-circle-exclamation"></i> About Me
+                </a>
+                 <a onclick="logout()"
+                 class="tab">
+                 <i class="fa-solid fa-circle-left"></i> Restart
+                    </a>
+                </nav>
+            </div>
+            <div class="rightbox">
+                <div class="profile tabShow">
+                    <h1>Personal Info</h1>
+                    <h2>Full Name</h2>
+                    <input type="text" class="input" value="Lloyd Jerome M. Hombre">
+                    <h2>Birthday</h2>
+                    <input type="text" class="input" value="November 2, 2001">
+                    <h2>Address</h2>
+                    <input type="text" class="input" value="Mamala II, Sariaya Quezon">
+                    <h2>School</h2>
+                    <input type="text" class="input" value="Batangas State University">
+                    <h2>Citizenship</h2>
+                    <input type="text" class="input" value="Filipino">
+                    
+
+                    
+                    
+                </div>
+                <div class="profile tabShow">
+                    <h1>Graduated School</h1>
+                    <div class="team_img">
+                        <div class="box"><img class = "t1_img container" src = "Elem.jpg"></img>
+                            <div class="lbl">
+                                <center><h>ELEMENTARYSCHOOL</h></center>
+                                <center> <h>DepEd Tayo Sariaya East Central Main ES- Quezon</h></center>
+                                <center><h>Grade 1-6</h></center>
+                            </div>
+                        </div>
+                        <div class="box"><img class = "t2_img container" src = "highschool.jfif"></img>
+                            <div class="lbl">
+                                <center><h>HIGHSCHOOL</h></center>
+                                <center><h>Sariaya Institute</h></center>
+                                <center><h>Grade 7-12</h></center>
+                        
+                            </div>
+                        </div>
+                        <div class="box"><img class = "t3_img container" src = "College.png"></img>
+                            <div class="lbl">
+                                <center><h>COLLEGE</h></center>
+                                <center><h>Batangas State University - Alangilan</h></center>
+                                <center><h>1st-3rd year (ongoing)</h></center>
+                            </div>
+                        </div>
+                        </div>
+                    
+                    
+                </div>
+                <div class="subscription tabShow">
+                    <h1>Hobbies</h1>
+                    <div class="team_img">
+                        <div class="box"><img class = "t1_img container" src = "basketball.jpg"></img>
+                            <div class="lbl">
+                                <center><h>BASKETBALL</h></center>
+                                <center> <h>Shoot and Teamwork with my friends are the best bonding </h></center>
+                            </div>
+                        </div>
+                        <div class="box"><img class = "t2_img container" src = "gym.jfif"></img>
+                            <div class="lbl">
+                                <center><h>GYM</h></center>
+                                <center><h>Lifting is my stress relief</h></center>
+                             
+                        
+                            </div>
+                        </div>
+                        <div class="box"><img class = "t3_img container" src = "Games.webp"></img>
+                            <div class="lbl">
+                                <center><h>ONLINE GAMES</h></center>
+                                <center><h>Game is my free time when my work is done</h></center>
+                            </div>
+                        </div>
+                        </div>
+
+                
+    
+    
+                    
+                </div>
+                <div class="privacy tabShow">
+                    <h1>About Me</h1>
+                    <br>
+                    <br>
+                
+                   <h2> Hello my name is Lloyd Jerome M. Hombre, currently 21 years old from Mamala II, Sariaya Quezon. My school is Batangas State University - Alangilan.  </h2>
+                   <br>
+                   <br>
+                   <br>
+                   <h2>First there's a 3 selection of course. I choose Computer Engineer, Computer Science, Information Technology. Our School pick Computer Science for me.</h2>
+                   <h2>I want to extend my knowledge about computer that's why i chose this course.</h2>
+                   <h2>I want to master Javascript, C++, Android Studio, HTML, Python etc.</h2>
+                   <h2>I want to travel to kuwait, japan, saudi, america, dubai, etc.</h2>
+                   <h2>I want to repay all of my parents sacrifice's to me.</h2>
+                   <h2>I want to be successful man</h2>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <h2>Credits to the rightful owners. No copyright infringement intended</h2>
+                   <i class="fa-brands fa-facebook"></i> Lloyd Hombre
+                   <i class="fa-brands fa-twitter"></i> @LJMH_
+                   <i class="fa-brands fa-square-instagram"></i> lloyd.hombre
+                   
+                
+    
+                  
+                </div>
+                <div class="settings tabShow">
+                
+                </div>
+            </div>
+        </div>
+        <script src="all.min.js"></script>
+        <script src="jquery.js"></script>
+        <script src="index.js"></script>
+        <script>
+        const tabBtn =
+        document.querySelectorAll(".tab");
+        const tab = 
+        document.querySelectorAll(".tabShow");
+    
+        function tabs(panelIndex){
+            tab.forEach(function(node){
+                node.style.display = "none";
+            });
+            tab[panelIndex].style.display = "block";
+        }
+        tabs(0);
+        </script>
+
+        
+    </body></html>
